@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" th:href="@{/img/logo.png}" type="image/png" />
+    <title>Perfil Administrador | Biblioteca Online</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/perfil.css}" />
+  </head>
+  <body>
+    <header class="header">
+      <a th:href="@{/meu-perfil}" class="logo" id="header-avatar">
+        <i
+          class="bx bx-user-circle"
+          style="font-size: 50px; color: #2f3559"
+        ></i>
+      </a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a th:href="@{/home}"><i class="bx bx-home"></i></a>
+        <a th:href="@{/favoritos}"><i class="bx bx-heart"></i></a>
+      </nav>
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Buscar por título..."
+          class="search-input"
+        />
+        <button class="search-btn" aria-label="Buscar">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="page-title">
+        <h1>Perfil Administrador</h1>
+        <p>Veja os detalhes do seu perfil aqui</p>
+      </div>
+
+      <section class="grid-top">
+        <article class="card profile-card">
+          <div class="avatar" id="profile-avatar">
+             <img
+              th:src="@{${usuario.fotoPerfil} ?: '/assets/img/user.png'}"
+              alt="Foto do usuário"
+              class="avatar-img"
+            />
+          </div>
+          <div class="profile-meta">
+            <h3 th:text="${usuario.nome}">Nome do Usuário</h3>
+            <label class="edit-badge" for="upload-foto">
+              <i class="bx bx-edit"></i> editar foto
+              <input type="file" id="upload-foto" accept="image/*" hidden />
+            </label>
+          </div>
+        </article>
+
+        <article class="card pad relative">
+          <h2>Outros detalhes</h2>
+          <button
+            class="inline-edit"
+            aria-label="Editar detalhes"
+            data-open="editar-detalhes"
+          >
+            <i class="bx bx-edit"></i>
+          </button>
+          <div class="details">
+            <div class="field">
+              <b>Nome</b>
+              <div th:text="${usuario.nome}">Nome do Usuário</div>
+            </div>
+            <div class="field">
+              <b>E-mail</b>
+               <div th:text="${usuario.email}">email@exemplo.com</div>
+            </div>
+            <div class="field">
+              <b>Livros curtidos</b>
+               <div th:text="${#lists.size(usuario.livrosCurtidos)}">0</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section">
+        <h3>Senha</h3>
+        <form th:action="@{/perfil/mudar-senha}" method="post">
+            <div class="form-grid">
+                </div>
+            <div class="row-actions">
+                <button class="btn" type="submit">Atualizar</button>
+            </div>
+        </form>
+      </section>
+
+      <section class="section danger">
+        <h3>Deletar conta</h3>
+        </section>
+    </main>
+
+    <div class="popup-overlay" id="editar-detalhes">
+        </div>
+    
+    <section class="container-cards">
+      <div class="cards-grid">
+        <a th:href="@{/admin/gerenciar-usuarios}" class="card-adm">
+          <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3>Gerenciar Usuários</h3>
+        </a>
+
+        <a th:href="@{/admin/livros/novo}" class="card-adm">
+            <div class="card-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <h3>Publicar Livros</h3>
+        </a>
+
+        <a th:href="@{/admin/livros}" class="card-adm">
+            <div class="card-icon">
+                <i class="fa-solid fa-pencil"></i>
+            </div>
+            <h3>Gerenciar Livros</h3>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script th:src="@{/js/perfil.js}"></script>
+    <script th:src="@{/js/script.js}"></script>
+  </body>
+</html>

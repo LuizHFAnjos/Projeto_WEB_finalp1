@@ -1809,15 +1809,3 @@ img {
   border-radius: 50% !important;
   display: block;
 }
-
-/* --- CONTROLE DA BARRA DE PESQUISA --- */
-
-/* 1. Esconde a barra de pesquisa por padrão em TODAS as páginas */
-.header .search-container {
-    display: none;
-}
-
-/* 2. Mostra a barra de pesquisa APENAS na página que tem o id="home-page" no body */
-body#home-page .header .search-container {
-    display: flex; 
-}

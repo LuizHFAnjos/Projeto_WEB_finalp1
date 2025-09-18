@@ -25,23 +25,14 @@ public class CadastroController {
     }
 
     @PostMapping
-    public ResponseEntity<?> insert(@Valid @RequestBody UsuarioCadastroDTO dto){
-        // LOG PARA VERIFICAR SE O CONTROLLER FOI ACIONADO E QUAIS DADOS CHEGARAM
-        System.out.println("--- Endpoint /api/cadastro acionado ---");
-        System.out.println("Nome recebido: " + dto.getNome());
-        System.out.println("Email recebido: " + dto.getEmail());
-        
+    public ResponseEntity<?> insert(@Valid @RequestBody UsuarioCadastroDTO dto){        
         try{
             UsuarioRespostaDTO usuarioResposta = cadastroService.insert(dto);
-            System.out.println("--- Cadastro realizado com SUCESSO no service ---");
             return ResponseEntity.status(HttpStatus.CREATED).body(usuarioResposta);
         }catch(EmailJaExisteException e){
-            System.out.println("--- ERRO: E-mail já existe ---");
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         } catch (Exception e) {
-            // CAPTURA GERAL DE ERROS
-            System.err.println("!!! OCORREU UM ERRO INESPERADO NO CADASTRO !!!");
-            e.printStackTrace(); // Isso vai imprimir o erro detalhado no console
+            e.printStackTrace(); 
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ocorreu um erro interno no servidor.");
         }
     }

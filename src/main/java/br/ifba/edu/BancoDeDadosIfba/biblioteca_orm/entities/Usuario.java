@@ -63,8 +63,8 @@ public class Usuario {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name ="TB_USUARIO_ROLE",
-        joinColumns = @JoinColumn(name = "usuario_id"),       // A coluna 'usuario_id' se junta com esta entidade (Usuario)
-        inverseJoinColumns = @JoinColumn(name = "role_id")    // A outra coluna 'role_id' se junta com a outra entidade (Role)
+        joinColumns = @JoinColumn(name = "usuario_id"),      
+        inverseJoinColumns = @JoinColumn(name = "role_id")    
     )
     private Set<Role> roles = new HashSet<>();
 

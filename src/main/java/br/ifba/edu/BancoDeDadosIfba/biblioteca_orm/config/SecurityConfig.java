@@ -31,11 +31,9 @@ public class SecurityConfig {
                     "/login"
                 ).permitAll()
                 
-                // <-- REGRA DE SEGURANÇA CRÍTICA
                 // Apenas usuários com a permissão 'ADMIN' podem acessar estas URLs.
                 .requestMatchers("/admin/**", "/perfil-admin").hasRole("ADMIN")
 
-                // <-- REGRA DE SEGURANÇA CRÍTICA
                 // Apenas usuários com a permissão 'USER' podem acessar estas URLs.
                 .requestMatchers("/perfil-usuario", "/favoritos").hasRole("USER")
 

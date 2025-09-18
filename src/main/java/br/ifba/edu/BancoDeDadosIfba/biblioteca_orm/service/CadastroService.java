@@ -35,7 +35,7 @@ public class CadastroService {
         usuario.setEmail(dto.getEmail());
         usuario.setSenha(passwordEncoder.encode(dto.getSenha()));
 
-        // Lógica para definir a Role
+
         // Verifica se existe algum usuário no banco de dados
         if (usuarioRepository.count() == 0) {
             // Se for o primeiro, será ADMIN

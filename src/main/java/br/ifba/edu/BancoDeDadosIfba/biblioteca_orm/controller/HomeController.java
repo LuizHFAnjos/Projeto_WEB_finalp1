@@ -16,10 +16,8 @@ public class HomeController {
     public String exibirHome(Model model) {
         // Busca a lista de todos os livros através do service
         model.addAttribute("livrosRecentes", livroService.listar());
-        // Você pode adicionar lógicas diferentes para cada carrossel
         model.addAttribute("livrosEmAlta", livroService.listar()); 
         
-        // Retorna o nome do arquivo HTML: "home.html"
         return "home";
     }
 }

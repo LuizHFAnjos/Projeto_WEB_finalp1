@@ -46,7 +46,6 @@ function doSearch(query) {
                 resultsDiv.style.display = 'none';
             }
 
-            // Atualiza carousel
             carousel.innerHTML = '';
             if (data.length === 0) {
                 carousel.innerHTML = initialCarouselHTML;
@@ -60,7 +59,7 @@ function doSearch(query) {
         });
 }
 
-// Debounce
+
 let debounceTimer;
 searchInput.addEventListener('keyup', function () {
     const q = this.value.trim();

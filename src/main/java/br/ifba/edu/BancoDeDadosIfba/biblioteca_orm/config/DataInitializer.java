@@ -18,14 +18,11 @@ public class DataInitializer {
         return args -> {
             // Só executa se não houver nenhum livro no banco
             if (livroRepository.count() == 0) {
-                System.out.println("--- Populando o banco de dados com livros iniciais ---");
 
                 // Pega o primeiro usuário (admin) para ser o "autor" padrão das publicações iniciais
                 Usuario autorPadrao = usuarioRepository.findById(1L).orElse(null);
 
                 if (autorPadrao != null) {
-                    // Crie quantos livros de exemplo quiser
-                    // IMPORTANTE: Coloque imagens com esses nomes na sua pasta 'uploads/imgs/'
                     LivroEntity livro1 = new LivroEntity();
                     livro1.setNome("A Culpa é das Estrelas");
                     livro1.setAutor("John Green");
@@ -50,7 +47,7 @@ public class DataInitializer {
                     livro3.setCapaUrl("/uploads/imgs/o-vilarejo.png"); // Exemplo de imagem
                     livro3.setUsuario(autorPadrao);
 
-                    // Salva a lista de livros no banco
+                    
                     livroRepository.saveAll(Arrays.asList(livro1, livro2, livro3));
                            
                 } 

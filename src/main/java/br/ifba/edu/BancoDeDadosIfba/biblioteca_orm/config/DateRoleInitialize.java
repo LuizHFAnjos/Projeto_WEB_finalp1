@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 
-//Inicializa USER E DATE automaticamente no h2 ao abrir pela primeira vez
+
 public class DateRoleInitialize {
     @Bean
     public CommandLineRunner initializeRoles(RoleRepository roleRepository){

@@ -8,7 +8,7 @@ public class PageController {
 
     @GetMapping("/login")
     public String login() {
-        return "login"; // Retorna o nome do arquivo 'resources/templates/login.html'
+        return "login";
     }
 
 }

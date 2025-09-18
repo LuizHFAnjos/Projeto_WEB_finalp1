@@ -6,13 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const deleteButton = event.target.closest(".delete-btn");
       if (!deleteButton) return;
 
-      // 1. Previne que o link seja seguido imediatamente
       event.preventDefault();
 
-      // 2. Pega a URL de exclusão do atributo href do link
+      
       const deleteUrl = deleteButton.href;
 
-      // 3. Mostra o seu alerta personalizado do SweetAlert2
       Swal.fire({
         title: "Você tem certeza?",
         text: "Esta ação não poderá ser revertida!",
@@ -26,8 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
           cancelButton: "swal-btn swal-btn--primary",
         },
       }).then((result) => {
-        // 4. Se o usuário confirmar, redireciona para a URL de exclusão.
-        // O back-end vai deletar o livro e recarregar a página com a lista atualizada.
         if (result.isConfirmed) {
           window.location.href = deleteUrl;
         }
@@ -35,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- SUA LÓGICA DE FILTRO DA TABELA (MANTIDA) ---
+ 
   const searchInput = document.getElementById("table-search-input");
 
   if (searchInput) {

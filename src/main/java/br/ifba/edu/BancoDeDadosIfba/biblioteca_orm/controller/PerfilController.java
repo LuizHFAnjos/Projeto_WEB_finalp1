@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model; // Importe o Model
+import org.springframework.ui.Model; 
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,12 +16,11 @@ public class PerfilController {
 
     private final UsuarioRepository usuarioRepository;
 
-    // Injeção de dependência do repositório
+    
     public PerfilController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    // ... (seu método @GetMapping("/meu-perfil") continua o mesmo) ...
     @GetMapping("/meu-perfil")
     public String redirecionarPerfil() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -35,7 +34,6 @@ public class PerfilController {
     }
 
 
-    // MÉTODO ATUALIZADO
     @GetMapping("/perfil-admin")
     public String paginaPerfilAdmin(Model model) {
         // Pega o email do usuário logado
@@ -48,7 +46,6 @@ public class PerfilController {
         return "perfil-admin";
     }
 
-    // MÉTODO ATUALIZADO
     @GetMapping("/perfil-usuario")
     public String paginaPerfilUsuario(Model model) {
         // Pega o email do usuário logado

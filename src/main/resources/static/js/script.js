@@ -1,8 +1,3 @@
-// ===============================================
-// SCRIPT DA PÁGINA HOME - VERSÃO FINAL OTIMIZADA
-// ===============================================
-
-// --- LÓGICA DO MENU E SCROLLSPY ---
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let sections = document.querySelectorAll("section");

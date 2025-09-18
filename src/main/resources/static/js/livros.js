@@ -28,8 +28,6 @@ menuIcon.onclick = () => {
 
 //CRIAR LIVROS
 document.addEventListener("DOMContentLoaded", () => {
-  // --- DADOS DO LIVRO ---
-  // vamos buscar esses dados de um banco de dados, no futuro
 
   const livro = {
     capa: "../img/capa (6).png",

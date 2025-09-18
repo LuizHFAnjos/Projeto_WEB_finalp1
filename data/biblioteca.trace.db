@@ -394,7 +394,7 @@ org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
+	at br.ifba.edu.BibliotecaOnline.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /home/rogi/Downloads/biblioteca-orm/data/biblioteca.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
@@ -649,7 +649,7 @@ INSERT INTO TB_AUTOR (nomeAutor, foto_autor, descricaoAutor) [42122-232]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
+	at br.ifba.edu.BibliotecaOnline.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
 2025-08-28 15:06:55.895455-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
 VALUES [42001-232]
@@ -797,7 +797,7 @@ INSERT INTO TB_AUTOR (nomeAutor, foto_autor, descricaoAutor) [42122-232]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
+	at br.ifba.edu.BibliotecaOnline.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
 2025-08-28 15:08:01.397264-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
 VALUES [42001-232]
@@ -945,7 +945,7 @@ INSERT INTO TB_AUTOR (nomeAutor, foto_autor, descricaoAutor) [42122-232]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
+	at br.ifba.edu.BibliotecaOnline.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
 2025-08-28 15:18:24.964156-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
 VALUES [42001-232]
@@ -1174,7 +1174,7 @@ INSERT INTO TB_AUTOR (nome_autor, foto_autor, descricaoAutor) [42122-232]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
-	at br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
+	at br.ifba.edu.BibliotecaOnline.BibliotecaOrmApplication.main(BibliotecaOrmApplication.java:10)
 2025-08-28 15:22:24.146775-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
 VALUES [42001-232]
@@ -1329,8 +1329,8 @@ VALUES
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1447)
 2025-08-28 15:23:56.097798-03:00 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]package br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.entities"; expected "PREPARE"; SQL statement:
-package br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.entities [42001-232]
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]package br.ifba.edu.BibliotecaOnline.entities"; expected "PREPARE"; SQL statement:
+package br.ifba.edu.BibliotecaOnline.entities [42001-232]
 2025-08-28 15:23:56.099384-03:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]import jakarta.persistence.*"; expected "INSERT"; SQL statement:
 import jakarta.persistence.* [42001-232]

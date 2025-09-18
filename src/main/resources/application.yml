@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: biblioteca-orm
+    name: BibliotecaOnline
 
   datasource:
     url: jdbc:mysql://localhost:3306/biblioteca 

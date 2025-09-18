@@ -76,7 +76,7 @@
                 <div class="form-group">
                     <label for="genero">Gênero</label>
                     <select id="genero" th:field="*{genero}" required>
-                        <option th:each="g : ${T(br.ifba.edu.BancoDeDadosIfba.biblioteca_orm.model.GeneroEnum).values()}" 
+                        <option th:each="g : ${T(br.ifba.edu.BibliotecaOnline.model.GeneroEnum).values()}" 
                                 th:value="${g}" th:text="${g.nomeFormatado}"></option>
                     </select>
                 </div>

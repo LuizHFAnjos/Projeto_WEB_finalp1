@@ -7,29 +7,16 @@
     <link rel="shortcut icon" th:href="@{/assets/img/logo.png}" type="image/png" />
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link rel="stylesheet" th:href="@{/css/gerenciar-livros.css}" />
+    <link rel="stylesheet" th:href="@{/css/home-search.css}" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script th:src="@{/js/home-search.js}" defer></script>
   </head>
 
   <body>
-    <header class="header">
-      <a th:href="@{/meu-perfil}" class="logo" id="header-avatar">
-        <i class="bx bx-user-circle" style="font-size: 50px; color: #2f3559"></i>
-      </a>
-      <i class="bx bx-menu" id="menu-icon"></i>
-      <nav class="navbar">
-        <a th:href="@{/home}"><i class="bx bx-home"></i></a>
-        <a th:href="@{/favoritos}"><i class="bx bx-heart"></i></a>
-      </nav>
-      <div class="search-container">
-        <input type="text" placeholder="Buscar por título..." class="search-input" />
-        <button class="search-btn" aria-label="Buscar">
-          <i class="bx bx-search"></i>
-        </button>
-      </div>
-    </header>
+    <div th:replace="~{fragments/header :: header}"></div>
 
     <main class="publicar-container">
       <div class="page-header-publicar">
@@ -79,7 +66,7 @@
     </main>
 
     <footer class="footer">
-        </footer>
+    </footer>
     <script th:src="@{/js/script.js}"></script>
     <script th:src="@{/js/gerenciar-livros.js}"></script>
   </body>

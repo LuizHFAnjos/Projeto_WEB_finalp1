@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface LivroRepository extends JpaRepository<LivroEntity, Long> {
 
     List<LivroEntity> findByNomeContainingIgnoreCase(String nome);//para pesquisar o nome no html
+    List<LivroEntity> findByNomeContainingIgnoreCaseOrAutorContainingIgnoreCase(String nome, String autor);
     boolean existsByNome(String nome);
     boolean existsByNomeAndIdNot(String nome, Long id);
 }

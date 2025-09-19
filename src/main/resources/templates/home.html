@@ -6,7 +6,9 @@
     <title>Início | Biblioteca Online</title>
     <link rel="shortcut icon" th:href="@{/img/logo.png}" type="image/png" />
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/home-search.css}" />
     <script type="module" th:href="@{/js/script.js}"></script>
+    <script th:src="@{/js/home-search.js}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
@@ -25,10 +27,11 @@
         <a href="#favoritos"><i class="bx bx-heart"></i></a>
       </nav>
       <div class="search-container">
-        <input type="text" placeholder="Buscar por título..." class="search-input" />
+        <input type="text" id="home-search-input" placeholder="Buscar por título ou autor..." class="search-input" autocomplete="off" />
         <button class="search-btn" aria-label="Buscar">
           <i class="bx bx-search"></i>
         </button>
+        <div id="search-results-container" class="search-results-list"></div>
       </div>
     </header>
 

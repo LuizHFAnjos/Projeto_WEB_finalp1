@@ -14,7 +14,7 @@ public class LivroApiController {
     private final LivroService livroService;
 
     @GetMapping("/search")
-    public List<LivroDTO> buscarLivros(@RequestParam("nome") String nome) {
-        return livroService.buscarPorNome(nome);
+    public List<LivroDTO> searchLivros(@RequestParam("q") String query) {
+        return livroService.buscarPorNomeOuAutor(query);
     }
 }

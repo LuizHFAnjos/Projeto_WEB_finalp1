@@ -136,8 +136,15 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  opacity: 1;
 }
-.admin-users .actions-card > * {
+
+.admin-users .actions-card form {
+    margin: 0;
+    padding: 0;
+}
+
+.admin-users .actions-card form button {
   background: #ffffff;
   color: #2f3559;
   border: 1px solid #ddd;
@@ -153,7 +160,8 @@
   transition: all 0.2s ease-in-out;
   padding: 0;
 }
-.admin-users .actions-card > *:hover {
+
+.admin-users .actions-card form button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #0056b3;
@@ -332,54 +340,6 @@
   width: auto !important;
 }
 
-.swal-actions-gap {
-  gap: 12px !important;
-}
-
-.swal-btn {
-  box-sizing: border-box !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 44px !important;
-  min-width: 160px !important;
-  padding: 0 18px !important;
-  border-radius: 12px !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  line-height: 1 !important;
-  border: 1px solid transparent !important;
-  cursor: pointer !important;
-  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-}
-.swal-btn:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-}
-.swal-btn--danger {
-  background: #d94a4a !important;
-  color: #fff !important;
-  border-color: #d94a4a !important;
-}
-.swal-btn--primary {
-  background: #2f3559 !important;
-  color: #fff !important;
-  border-color: #2f3559 !important;
-}
-.swal2-styled {
-  background: initial !important;
-  border: none !important;
-  color: inherit !important;
-}
-.swal2-popup .swal2-actions .swal2-confirm.swal2-styled:not(.swal-btn) {
-  background: #2f3559 !important;
-  color: #fff !important;
-  border-radius: 12px !important;
-  padding: 10px 18px !important;
-  font-weight: 700 !important;
-  border: 1px solid #2f3559 !important;
-}
-
 .admin-users .actions {
   display: flex;
   gap: 10px;
@@ -423,4 +383,41 @@
   background: #2f3559;
   color: #fff;
   border: 1px solid #2f3559;
+}
+
+
+/* ======================================================= */
+/* ✅ INÍCIO DA ÚNICA PARTE ADICIONADA                      */
+/* Estilos para os botões customizados do SweetAlert       */
+/* ======================================================= */
+
+.swal-btn {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
+  min-width: 160px !important;
+  padding: 0 18px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+.swal-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+.swal-btn--danger {
+  background: #d94a4a !important;
+  color: #fff !important;
+  border-color: #d94a4a !important;
+}
+.swal-btn--primary {
+  background: #2f3559 !important;
+  color: #fff !important;
+  border-color: #2f3559 !important;
 }

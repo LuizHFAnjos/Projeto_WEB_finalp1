@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (userList) {
     userList.addEventListener("click", (event) => {
-      const deleteButton = event.target.closest(".delete-form button[type='submit']");
+      const deleteButton = event.target.closest(
+        ".delete-form button[type='submit']"
+      );
       if (!deleteButton) return;
 
       const form = deleteButton.closest(".delete-form");
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmButtonText: "Sim, deletar!",
         cancelButtonText: "Cancelar",
         reverseButtons: true,
+        buttonsStyling: false,
         customClass: {
           confirmButton: "swal-btn swal-btn--danger",
           cancelButton: "swal-btn swal-btn--primary",
@@ -28,8 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  
-  
+
   const searchInput = document.getElementById("user-search-input");
   if (searchInput) {
     searchInput.addEventListener("input", (event) => {
@@ -37,13 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const cards = document.querySelectorAll(".user-list .user-card");
 
       cards.forEach((card) => {
-        const name = card.querySelector(".name")?.textContent.toLowerCase() || "";
-        const email = card.querySelector(".email")?.textContent.toLowerCase() || "";
-        
+        const name =
+          card.querySelector(".name")?.textContent.toLowerCase() || "";
+        const email =
+          card.querySelector(".email")?.textContent.toLowerCase() || "";
+
         if (name.includes(term) || email.includes(term)) {
           card.style.display = "";
         } else {
-          card.style.display = "none"; 
+          card.style.display = "none";
         }
       });
     });

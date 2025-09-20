@@ -35,7 +35,7 @@ public class RecuperarSenhaService {
         Usuario u = usuario.get();
 
         //Criar o código de 6 digitos para ser enviado
-        String codigo = String.format("%06d", new Random().nextInt(100000));
+        String codigo = String.format("%06d", new Random().nextInt((1_000_000)));
 
         //Atribuir o codigo ao atributo codigo e para o usuario da tabela token
         TokenSenha tokenSenha = new TokenSenha();
@@ -45,7 +45,12 @@ public class RecuperarSenhaService {
 
         tokenSenhaRepository.save(tokenSenha);
 
-        emailService.enviarEmail(usuario.get().getEmail(), "Recuperação de senha","Seu código de senha é " + codigo + "ele expira em 15 minutos");
+        try {
+            emailService.enviarEmail(u.getEmail(), "Recuperação de senha",
+                    "Seu código de senha é " + codigo + ". Ele expira em 15 minutos.");
+        } catch (Exception e) {
+            throw new RuntimeException("Falha ao enviar e-mail: " + e.getMessage(), e);
+        }
 
 
 

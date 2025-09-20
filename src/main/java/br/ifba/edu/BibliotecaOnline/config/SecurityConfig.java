@@ -30,7 +30,10 @@ public class SecurityConfig {
                     "/img/**",
                     "/api/cadastro", 
                     "/login",
-                    "/h2-console/**"
+                    "/h2-console/**",
+                    "/recuperar",
+                    "/api/recuperar/**"
+
                 ).permitAll()
                 
                 // Apenas usuários com a permissão 'ADMIN' podem acessar estas URLs.
@@ -56,7 +59,7 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/login?logout=true")
                 .permitAll()
             )
-            .csrf(csrf -> csrf.ignoringRequestMatchers("/api/cadastro","/h2-console/**")
+            .csrf(csrf -> csrf.ignoringRequestMatchers("/api/cadastro","/h2-console/**", "/api/recuperar/**")
             )
             .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 

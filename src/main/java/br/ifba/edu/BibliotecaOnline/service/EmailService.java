@@ -21,7 +21,7 @@ public class EmailService {
         mensagem.setTo(destinatario);
         mensagem.setSubject(assunto);
         mensagem.setText(corpo);
-        mensagem.setFrom("igorcauawo@gmail.com");
+        mensagem.setFrom("no-reply@bibliotecaonline.com");
 
         mailSender.send(mensagem);
 

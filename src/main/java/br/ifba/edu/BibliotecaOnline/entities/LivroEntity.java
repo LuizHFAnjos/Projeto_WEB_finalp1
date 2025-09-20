@@ -37,9 +37,9 @@ public class LivroEntity {
     @Column(length = 1000)
     private String descricaoAutor;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "publicado_por_admin_id")
+    private Usuario publicadoPor;
 
     @ManyToMany
     @JoinTable(

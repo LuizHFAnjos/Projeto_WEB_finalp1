@@ -1,4 +1,4 @@
-package br.ifba.edu.BibliotecaOnline.config;
+/*package br.ifba.edu.BibliotecaOnline.config;
 
 import br.ifba.edu.BibliotecaOnline.entities.LivroEntity;
 import br.ifba.edu.BibliotecaOnline.entities.Usuario;
@@ -54,4 +54,4 @@ public class DataInitializer {
             }
         };
     }
-}
+} */

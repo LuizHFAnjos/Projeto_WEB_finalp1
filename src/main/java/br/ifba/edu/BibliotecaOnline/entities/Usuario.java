@@ -57,7 +57,7 @@ public class Usuario {
     private List<LivroEntity> livrosCurtidos = new ArrayList<>();
 
     //Lista de Livros Publicados
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "publicadoPor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LivroEntity> livrosPublicados = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER)

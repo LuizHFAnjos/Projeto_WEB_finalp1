@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -28,7 +29,8 @@ public class SecurityConfig {
                     "/assets/**",
                     "/img/**",
                     "/api/cadastro", 
-                    "/login"
+                    "/login",
+                    "/h2-console/**"
                 ).permitAll()
                 
                 // Apenas usuários com a permissão 'ADMIN' podem acessar estas URLs.
@@ -54,7 +56,9 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/login?logout=true")
                 .permitAll()
             )
-            .csrf(csrf -> csrf.ignoringRequestMatchers("/api/cadastro"));
+            .csrf(csrf -> csrf.ignoringRequestMatchers("/api/cadastro","/h2-console/**")
+            )
+            .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 
         return http.build();
     }

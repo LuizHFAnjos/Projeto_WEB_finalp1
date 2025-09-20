@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const deleteButton = event.target.closest(".delete-btn");
       if (!deleteButton) return;
 
+      // Previne que o link seja seguido imediatamente
       event.preventDefault();
-
-      
       const deleteUrl = deleteButton.href;
 
+      // Mostra um pop-up de confirmação
       Swal.fire({
         title: "Você tem certeza?",
         text: "Esta ação não poderá ser revertida!",
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           cancelButton: "swal-btn swal-btn--primary",
         },
       }).then((result) => {
+        // Se o usuário clicou em "Sim, deletar!"
         if (result.isConfirmed) {
           window.location.href = deleteUrl;
         }
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- 
   const searchInput = document.getElementById("table-search-input");
 
   if (searchInput) {
@@ -41,11 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       rows.forEach((row) => {
         const cells = row.cells;
-        if (!cells || cells.length < 3) return;
+        // Pula a linha de "Nenhum livro encontrado"
+        if (!cells || cells.length < 3) return; 
+
         const title = cells[1].textContent.toLowerCase();
         const author = cells[2].textContent.toLowerCase();
-        row.style.display =
-          title.includes(term) || author.includes(term) ? "" : "none";
+
+        // Mostra a linha se o termo de busca for encontrado no título ou autor
+        const isMatch = title.includes(term) || author.includes(term);
+        row.style.display = isMatch ? "" : "none";
       });
     });
   }

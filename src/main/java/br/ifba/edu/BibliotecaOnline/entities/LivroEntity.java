@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.List;
 
+import br.ifba.edu.BibliotecaOnline.model.GeneroEnum;
+
 @Entity
 @Table(name = "TB_LIVRO") // Nome da tabela alinhado ao data.sql
 @Getter
@@ -41,11 +43,8 @@ public class LivroEntity {
     @JoinColumn(name = "publicado_por_admin_id")
     private Usuario publicadoPor;
 
-    @ManyToMany
-    @JoinTable(
-        name = "TB_LIVRO_CATEGORIA",
-        joinColumns = @JoinColumn(name = "livro_id"),
-        inverseJoinColumns = @JoinColumn(name = "categoria_id")
-    )
-    private List<Categoria> categorias;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "genero", nullable = false)
+    private GeneroEnum genero;
+
 }

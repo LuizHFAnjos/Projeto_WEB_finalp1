@@ -35,6 +35,8 @@ public class LivroDTO{
         @NotBlank(message = "Campo descrição do autor obrigatorio!")
         private String descricaoAutor;
 
+        private String publicadoPorNome;
+
 
  }
 

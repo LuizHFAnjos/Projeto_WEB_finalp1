@@ -9,11 +9,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface LivroMapper {
 
-    // Converte LivroDTO para LivroEntity
-
+    @Mapping(target = "publicadoPor", ignore = true)
     LivroEntity toEntity(LivroDTO dto);
 
-    // Converte LivroEntity para LivroDTO
+    @Mapping(source = "publicadoPor.nome", target = "publicadoPorNome")
     LivroDTO toDTO(LivroEntity entity);
 }
 

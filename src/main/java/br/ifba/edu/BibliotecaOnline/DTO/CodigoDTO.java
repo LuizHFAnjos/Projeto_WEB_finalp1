@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SenhaNovaDTO {
+public class CodigoDTO {
+
     private String codigo;
-    private String novaSenha;
+
 }
